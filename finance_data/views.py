@@ -14,7 +14,7 @@ from django.utils import timezone
 #   context = {"latest_question_list": latest_question_list}
 #   return render(request, "financial_data/finance.html", context)
 class IndexView(generic.ListView):
-    template_name = "financial_data/index.html"
+    template_name = "finance_data/index.html"
     context_object_name = "latest_question_list"
 
     def get_queryset(self):
@@ -35,7 +35,7 @@ class IndexView(generic.ListView):
 #    return render(request, "financial_data/detail.html", {"question": question})
 class DetailView(generic.DetailView):
     model = Question
-    template_name = "financial_data/detail.html"
+    template_name = "finance_data/detail.html"
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet.
@@ -47,7 +47,7 @@ class DetailView(generic.DetailView):
 #   return render(request, "financial_data/results.html", {"question": question})
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = "financial_data/results.html"    
+    template_name = "finance_data/results.html"    
     
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -70,7 +70,6 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("finance_data:results", args=(question.id,)))
-
 
 
 def get_queryset(self):

@@ -1,0 +1,16 @@
+li a {
+    color: rgb(14, 15, 14);
+}
+form {
+    color: rgb(14, 15, 14);
+
+}
+
+body {
+    background: rgb(241, 236, 236) url("") no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+
+
