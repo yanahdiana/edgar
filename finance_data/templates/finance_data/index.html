@@ -1,16 +1,7 @@
-<html>
-    <body>
-        {% load static %}
+{% extends "finance_data/base.html" %}
+{% block content %}
+    <h1> Hello Home</h1>
 
-        <link rel="stylesheet" href="{% static 'finance_data/style.css' %}">
-            {% if latest_question_list %}
-                <ul>
-                {% for question in latest_question_list %}
-                <li><a href="{% url 'finance_data:detail' question.id %}">{{ question.question_text }}</a></li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p>No polls are available.</p>
-            {% endif %}
-    </body>
-</html>
+
+
+{% endblock %}

@@ -1,17 +1,10 @@
-<html>
-    <body>
-        {% load static %}
-
-        <link rel="stylesheet" href="{% static 'finance_data/style.css' %}">
-            <legend><h1>{{ question.question_text }}</h1></legend>
-
-            <ul>
-                {% for choice in question.choice_set.all %}
-                <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-                {% endfor %}
-            </ul><br>
-            <a href="{% url 'finance_data:detail' question.id %}">Vote again?</a><br>
-            <a href="/financial_data">Back to Question</a>
-    </body>
-</html>
-
+{% extends "finance_data/base.html" %}
+{% block content %}
+    <legend><h1>{{ question.question_text }}</h1></legend>
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'finance_data:detail' question.id %}">Vote again?</a><br>
+{% endblock %}
