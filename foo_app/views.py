@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from finance_data.models import Question, Choice
 
+
 # Create your views here.
 def index(request):
    query = request.GET.get("q","")
@@ -10,8 +11,7 @@ def index(request):
    print(locals())
    return render(request, "foo_app/index.html", locals())
       
-      
-      
+  
 
    
  
